@@ -2,6 +2,7 @@ const bodyElement = document.querySelector("body");
 const changeColorButton = document.querySelector(".change-color-button");
 const rgbButton = document.querySelector(".rgb-button");
 const hexButton = document.querySelector(".hex-button");
+const colorBox = document.querySelector(".color-box");
 
 function randomNumber(maxNumber) {
   const MAX_NUMBER = maxNumber;
@@ -11,13 +12,22 @@ function randomNumber(maxNumber) {
 function handleBGHexColor() {
   const randomHexNumber = randomNumber(16777215).toString(16);
   bodyElement.style.background = `#${randomHexNumber}`;
+  renderBGColorCode(`#${randomHexNumber}`);
 }
 
 function handleBGRgbColor() {
   const randomRedNumber = randomNumber(255);
   const randomGreenNumber = randomNumber(255);
   const randomBlueNumber = randomNumber(255);
-  bodyElement.style.background = `rgba(${randomRedNumber}, ${randomGreenNumber}, ${randomBlueNumber})`;
+  bodyElement.style.background = `rgb(${randomRedNumber}, ${randomGreenNumber}, ${randomBlueNumber})`;
+  renderBGColorCode(
+    `rgb(${randomRedNumber}, ${randomGreenNumber}, ${randomBlueNumber})`
+  );
+}
+
+function renderBGColorCode(colorCode) {
+  colorBox.textContent = "";
+  colorBox.insertAdjacentHTML("beforeend", `색상 코드 : ${colorCode}`);
 }
 
 function switchColorMode(e) {
