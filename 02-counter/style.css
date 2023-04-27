@@ -1,0 +1,49 @@
+body {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #dce3e7;
+}
+
+.counter-wrap {
+  width: 50%;
+  text-align: center;
+}
+
+.counter-wrap h1 {
+  font-size: 4em;
+  margin: 0;
+  color: #515262;
+}
+
+.counter-wrap .count {
+  font-size: 7em;
+  color: #515262;
+}
+
+.button-wrap {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.button-wrap button {
+  border: 2px solid #515262;
+  border-radius: 8px;
+  padding: 4px 20px;
+  margin: 0 4px;
+  font-size: 1.2em;
+  color: #515262;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.button-wrap button:hover {
+  background-color: #515262;
+  color: #fff;
+}
